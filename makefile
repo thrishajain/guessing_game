@@ -1,7 +1,9 @@
-guessing_game:
+README.md: guessinggame.sh
 	touch README.md
-	cal >> README.md
-anything:
-	echo '# Project: Unix Workbench script'>> README.md
-	echo 'This makefile was run on:'>> README.md
-	date >> README.md
+	echo "# guessinggame" > README.md
+	echo "*  Created on: $$(date)" >> README.md
+	echo "  \n" >> README.md
+	echo "* The number of lines of code it has are: " >> README.md
+	wc -l guessinggame.sh | egrep -o "[0-9]+" >> README.md
+reset:
+	rm README.md 
